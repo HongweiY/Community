@@ -91,17 +91,9 @@
 </template>
 
 <script>
-import { ValidationProvider, extend } from 'vee-validate'
-import * as rules from 'vee-validate/dist/rules'
-import { messages } from 'vee-validate/dist/locale/zh_CN.json'
-import { getCode, forget } from '../api/login'
+import { ValidationProvider } from 'vee-validate'
 
-Object.keys(rules).forEach(rule => {
-  extend(rule, {
-    ...rules[rule],
-    message: messages[rule]
-  })
-})
+import { getCode, forget } from '@/api/login'
 
 export default {
   name: 'Forget',

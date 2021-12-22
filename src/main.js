@@ -2,10 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import axios from 'axios'
+import '@/utils/veevalidate'
+import Alert from '@/components/modules/alert'
 
+Vue.use(Alert)
 Vue.config.productionTip = false
-axios.defaults.baseURL = (process.env.NODE_ENV !== 'production') ? 'http://127.0.0.1:3000' : 'api.ymfsder.com'
 
 new Vue({
   router,

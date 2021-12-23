@@ -1,6 +1,6 @@
 export default {
   baseUrl: {
-    dev: 'http://127.0.0.1:36742',
+    dev: 'http://127.0.0.1:3000',
     pro: 'api.ymfsder.com'
   }
 }

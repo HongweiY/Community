@@ -14,9 +14,14 @@ const getTop = () => {
   return axios.get('/public/top')
 }
 
+const getTopWeek = () => {
+  return axios.get('/public/getTopWeek')
+}
+
 export {
   getList,
   getTop,
   getTips,
-  getLinks
+  getLinks,
+  getTopWeek
 }

@@ -2,11 +2,14 @@
   <div class="fly-panel">
     <h3 class="fly-panel-title">温馨通道</h3>
     <div class="fly-panel-main layui-row">
-      <ul class="layui-clear quick">
-        <li class="layui-col-xs6" v-for="(item,index) in list" :key="'tag'+index">
-          <a :href="item.link" target="_blank">{{ item.title }} </a>
-        </li>
-      </ul>
+      <template v-if="list!==null">
+        <ul class="layui-clear quick">
+          <li class="layui-col-xs6" v-for="(item,index) in list" :key="'tag'+index">
+            <a :href="item.link" target="_blank">{{ item.title }} </a>
+          </li>
+        </ul>
+      </template>
+      <div class="fly-none no-content" v-else>没有相关数据</div>
     </div>
   </div>
 </template>
@@ -23,6 +26,7 @@ export default {
   },
   mounted () {
     getTips().then(res => {
+      console.log(res)
       if (res.code === 200) {
         this.list = res.data
       }
@@ -58,6 +62,10 @@ $border-color: #f2f2f2;
       display: block;
     }
   }
+}
+
+.no-content {
+  min-height: 40px
 }
 
 </style>

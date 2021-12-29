@@ -28,4 +28,22 @@ export default {
 .gray {
   color: #999;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.pl0 {
+  padding-left: 0;
+}
+
+@for $i from 0 through 5 {
+  .pd#{$i} {
+    padding: $i*10+px;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
 </style>

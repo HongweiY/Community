@@ -124,9 +124,13 @@ export default {
           this.username = ''
           this.password = ''
           this.code = ''
-          requestAnimationFrame(() => {
-            this.$refs.loginForm.reset()
-          })
+          this.$store.commit('setUserInfo', res.data)
+          localStorage.setItem('userInfo', JSON.stringify(res.data))
+          localStorage.setItem('token', JSON.stringify(res.token))
+          console.log(JSON.stringify(res.token))
+
+          this.$store.commit('setIsLogin', true)
+          this.$router.push({ name: 'index' })
         } else if (res.code === 401) {
           this.$refs.codeField.setErrors([res.msg])
           this._getCode()

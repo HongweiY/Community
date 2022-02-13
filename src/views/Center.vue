@@ -1,5 +1,5 @@
 <template>
-  <div>center</div>
+  <div>centkker</div>
 </template>
 
 <script>

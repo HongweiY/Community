@@ -1,5 +1,7 @@
 import axios from 'axios'
 import handleError from '@/utils/handleError'
+import store from '../store/index'
+import publciConfig from '../config/index'
 
 const CancelToken = axios.CancelToken
 
@@ -32,8 +34,17 @@ class HttpRequest {
     // Add a request interceptor
     instance.interceptors.request.use(config => {
       // Do something before request is sent
+      const token = store.state.token
+
+      let isPublic = false
+      publciConfig.publicPath.map((path) => {
+        isPublic = isPublic || path.test(config.url)
+      })
+      if (token && !isPublic) {
+        config.headers.Authorization = 'Bearer ' + token
+      }
+
       const key = config.url + '&' + config.method
-      console.log(key)
       this.removePending(key, true)
       config.cancelToken = new CancelToken((c) => {
         // An executor function receives a cancel function as a parameter

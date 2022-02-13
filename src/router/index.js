@@ -22,6 +22,7 @@ const Password = () => import(/* webpackChunkName: 'info' */'@/components/user/P
 const Account = () => import(/* webpackChunkName: 'info' */'@/components/user/Account')
 const MyPosts = () => import(/* webpackChunkName: 'info' */'@/components/contents/MyPosts')
 const MyCollections = () => import(/* webpackChunkName: 'info' */'@/components/contents/MyCollections')
+const NotFund = () => import(/* webpackChunkName: 'notFund' */'@/views/NotFund')
 
 Vue.use(VueRouter)
 
@@ -77,7 +78,7 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'center',
+        name: '/center',
         component: Center
       },
       {
@@ -86,12 +87,12 @@ const routes = [
         component: Center
       },
       {
-        path: 'msg',
+        path: '/msg',
         name: 'msg',
         component: Msg
       },
       {
-        path: 'others',
+        path: '/others',
         name: 'others',
         component: Others
       },
@@ -105,7 +106,7 @@ const routes = [
           component: MyPosts
         },
         {
-          path: 'myCollections',
+          path: '/myCollections',
           name: 'myCollections',
           component: MyCollections
         }
@@ -139,6 +140,14 @@ const routes = [
         ]
       }
     ]
+  },
+  {
+    path: '/404',
+    component: NotFund
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 
 ]

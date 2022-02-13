@@ -1,16 +1,10 @@
 import axios from '@/utils/request'
-import store from '../store/index'
 
-const userSign = () => {
-  const headers = {
-    Authorization: 'Bearer ' + store.state.token,
-    'Content-Type': 'application/json'
-  }
-  return axios.get('/user/sign', {
-    headers
-  })
-}
+const userSign = () => axios.get('/user/sign')
+
+const editBaseInfo = (data) => axios.post('/user/updateUserInfo', data)
 
 export {
-  userSign
+  userSign,
+  editBaseInfo
 }

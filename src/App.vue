@@ -29,6 +29,10 @@ export default {
   color: #999;
 }
 
+.err {
+  color: #FD482C;
+}
+
 .text-center {
   text-align: center;
 }

@@ -20,7 +20,7 @@
 
         <template v-if="!isShow">
           <li class="layui-nav-item">
-            <a class="iconfont icon-touxiang layui-hide-xs" href="../user/login.html"></a>
+            <router-link class="iconfont icon-touxiang layui-hide-xs" :to="{path:'loginssss'}"></router-link>
           </li>
           <li class="layui-nav-item">
             <router-link :to="{name:'login'}">登入</router-link>

@@ -7,7 +7,7 @@
       <i class="fly-mid"></i>
       <a href="javascript:;" class="fly-link" id="LAY_signinTop" @click="showModal('isRankShow')">活跃榜<span
         class="layui-badge-dot"></span></a>
-      <span class="fly-signin-days">已连续签到<cite>{{ count }}</cite>天</span>
+      <span class="fly-signin-days" v-show="isSign||isLogin">已连续签到<cite>{{ count }}</cite>天</span>
     </div>
     <div class="fly-panel-main fly-signin-main">
       <template v-if="!isSign">
@@ -34,7 +34,7 @@ export default {
   name: 'Sign',
   data: function () {
     return {
-      isLogin: this.$store.state.isLogin,
+
       isSign: this.$store.state.userInfo.sign ? this.$store.state.userInfo.sign : false,
       isShow: false,
       isRankShow: false,
@@ -76,6 +76,9 @@ export default {
     }
   },
   computed: {
+    isLogin () {
+      return this.$store.state.isLogin
+    },
     count () {
       if (this.$store.state.userInfo !== {}) {
         if (this.$store.state.userInfo.count !== undefined) {

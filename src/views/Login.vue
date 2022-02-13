@@ -121,6 +121,8 @@ export default {
         sid: this.$store.state.sid
       }).then(res => {
         if (res.code === 200) {
+          res.data.username = this.username
+          console.log(this.username)
           this.username = ''
           this.password = ''
           this.code = ''

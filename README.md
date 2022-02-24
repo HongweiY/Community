@@ -1,24 +1,16 @@
-# front
+# Overview
+这是一个在线论坛系统。完成后，拥有一个在线论坛拥有的大多数功能。
 
-## Project setup
-```
-yarn install
-```
+目前已经完成的功能
+- 注册，邮箱激活
+- 登录、找回密码
+- 修改个人信息
+- 查看帖子
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## 运行流程
 
-### Compiles and minifies for production
-```
-yarn build
-```
+1. 下载项目后，按照vue项目的流程安装使用
+2. 同时为了配合使用，接口在 https://github.com/HongweiY/Community-api
+这个项目中，后期考虑将两个项目合并。
 
-### Lints and fixes files
-```
-yarn lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
